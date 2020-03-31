@@ -1,8 +1,6 @@
 //1. Counting Sheep
 //Input: 3
 
-
-
 let total = 3;
 
 function countSheep(num){
@@ -121,7 +119,23 @@ function factorial(n) {
 
 //9.
 
-//10.
+//10. Anagrams
+
+function anagrams(str, prefix) {
+  if (str.length <= 1) {
+          console.log(str + prefix)
+      return ;
+  }
+
+  for (let i = 0; i < str.length; i++) {
+     let char = str[i]
+     let lettersAfterChar = str.substring(i + 1)
+     let lettersBeforeChar = str.substring(0, i)
+     anagrams(lettersAfterChar + lettersBeforeChar, prefix + char)
+  }
+}
+
+console.log(anagrams('abcd', ''))
 
 //11.Organization Chart
 
